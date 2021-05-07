@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 15%; /*padding to center the phone*/
+}
+
+
+
+nav {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    padding-right: 20%;
+    padding-top: 31%;
+    
+}
+.button {
+    font-family: 'Indie Flower', cursive;
+    font-weight: 600;
+    font-size: 1.4rem;
+    padding: .5rem;
+    margin: 0.5rem;
+    background-color: rgb(255, 127, 80) ;
+    outline: none;
+    border: none;
+    border-radius: 5%;
+    transition: all .2s ease-in-out;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+a {
+    text-decoration: none;
+    color: rgb(47, 53, 66);
+}
+
+/*Phonebook table*/
+
+table {
+    font-family: 'Comfortaa', cursive;
+    color: #2f3542;
+    position: absolute;
+    z-index: 2;
+    padding-left: 11%;
+    padding-bottom: 5%;
+    
+}
+th{
+    font-weight: 700;
+}
+td, th {
+    padding-bottom: 1.4rem;
+    padding-right: .5rem;;
+    text-align: left;
+}
+
+.scale:hover {
+    transform: scale(1.1);
+    color:#ff4757;
+}
+
+
+/*small animations*/
+.head {
+    animation: head 2s alternate;
+    transform-box: fill-box;
+    transform-origin: bottom;
+    animation-delay: 1s;
+}
+
+
+@keyframes head {
+    0% { 
+        transform: rotatez(0deg);
+    }
+    50% {
+        transform: rotatez(-10deg);    
+    }
+    100% { 
+        transform: rotatez(0deg);  
+    }
+}
+
+.head:hover { /*same head animation on hover*/
+    animation: head-two 2s alternate;
+    transform-box: fill-box;
+    transform-origin: bottom;
+    
+}
+
+@keyframes head-two {
+    0% { 
+        transform: rotatez(0deg);  
+    }
+    50% {
+        transform: rotatez(-10deg); 
+    }
+    100% { 
+        transform: rotatez(0deg);  
+    }
+}
+
+/*pulling focus to the navbar*/
+#rektangel {
+    animation: rektangel 1s alternate ;
+    transform-box: fill-box;
+    transform-origin: bottom;
+}
+
+@keyframes rektangel {
+    0% { 
+        transform: scale(1);
+    }
+    50% { 
+        transform: scale(1.05);  
+    }
+    100% { 
+        transform: scale(1);  
+    }
+}
+
+/*Media*/
+@media only screen and (max-width: 1800px) {
+    
+    body {
+        padding:0%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+       
+    }
+    #mobil{
+        display: none;
+    }
+    #rektangel2{
+        display: none;
+    }
+
+    nav {
+        position: relative;
+        padding:0;
+        margin-top: 2%;
+    }
+   
+    table {
+        position: absolute;
+        z-index: 1;
+        margin:0;
+        padding:0;
+        
+    }
+    #katalog-svg {
+        position: relative;
+    }
+}
+
+@media only screen and (max-width:750px) {
+    body {
+        background-color:#2f3542;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+ 
+    nav {
+        position: static;
+        padding: 0%;
+    }
+    .button {
+        height: 5rem;
+        text-align: center;
+        padding-top: 1rem ;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    table {
+        position: static;
+        color: rgb(255, 127, 80) ;
+        text-align: center;
+        font-size: 1rem;
+        margin-bottom: 1rem ;
+    }
+
+   
+    #katalog-svg {
+       display: none;
+    }
+    
+}
